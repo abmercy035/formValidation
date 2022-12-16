@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login/Signup</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      color: #444;
+      -webkit-font-smoothing: antialiased;
+      background: #f0f0f0;
+    }
+
+    #container {
+      position: fixed;
+      width: 340px;
+      height: 300px;
+      top: 50%;
+      left: 50%;
+      margin-top: -140px;
+      margin-left: -170px;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    }
+
+    form {
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+
+    label {
+      color: #555;
+      display: inline-block;
+      margin-left: 18px;
+      padding-top: 10px;
+      font-size: 14px;
+      color: hsla(0, 100%, 50%, 10);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    input {
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 12px;
+      outline: none;
+    }
+
+    input[type=text],
+    input[type=password],
+    input[type=time] {
+      color: #777;
+      padding-left: 10px;
+      /* margin: 10px; */
+      margin-top: 12px;
+      margin-left: 18px;
+      width: 290px;
+      height: 30px;
+      border: 1px solid #c7d0d2;
+      border-radius: 2px;
+    }
+
+    input[type=text]:hover,
+    input[type=password]:hover,
+    input[type=time]:hover {
+      border: 1px solid #b6bfc0;
+    }
+
+    input[type=submit] {
+      float: right;
+      margin-right: 20px;
+      margin-top: 20px;
+      width: 100px;
+      height: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
+      /*IE fallback*/
+      border-radius: 30px;
+      border: 0;
+      cursor: pointer;
+      background-color: red;
+    }
+
+    #lower {
+      background: #ecf2f5;
+      width: 100%;
+      height: 70px;
+      /* margin-top: 20px; */
+      box-shadow: inset 0 1px 1px #fff;
+      /* border-top: 1px solid #ccc; */
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+
+    #form-swticher {
+      position: fixed;
+      width: 340px;
+      bottom: 10px;
+      left: 50%;
+      margin-left: -170px;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+      margin-right: 20px;
+      margin-top: 20px;
+      height: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
+      /*IE fallback*/
+      border-radius: 30px;
+      border: 1px solid #66add6;
+      cursor: pointer;
+      background-color: royalblue;
+    }
+
+    .none {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body id="container">
+  <h1>Login / Sign Up</h1>
+
+  <!-- Login Form -->
+
+  <form id="signup-form">
+    <label for="username" id="name-label">Username:</label>
+    <input type="text" id="email-input" name="email">
+    </label>
+    <label for="password" id="pass-label">Password:</label>
+    <input type="password" id="password-input" name="password">
+    <div id="lower">
+      <input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
+      <input type="submit" value="Login" id="submit-btn">
+    </div>
+    <!--/ lower-->
+  </form>
+
+  <!-- Signup Form
+  <form id="signup-form" class="none">
+    <label for="username">Username:</label>
+    <input type="text" name="email" id="email-input">
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password-input">
+    <div id="lower">
+      <input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
+      <input type="submit" id="submit-btn" value="Signup">
+    </div>
+  </form> -->
+  <div>
+    <button id="form-swticher"> Sign Up </button>
+    <script>
+      // Get the login and signup elements
+      // const loginForm = document.querySelector( '#login-form' );
+      const signupForm = document.querySelector( '#signup-form' );
+      const emailInp = document.querySelector( '#email-input' );
+      const passLabel = document.querySelector( '#pass-label' );
+      const nameLabel = document.querySelector( '#name-label' );
+      const passInp = document.querySelector( '#password-input' );
+      const submitBtn = document.querySelector( '#submit-btn' );
+      const formSwticher = document.querySelector( '#form-swticher' );
+      var emailInpValue = "";
+      var passInpValue = "";
+      var currentForm = true;
+
+      emailInp?.addEventListener( "keyup", ( e ) =>
+      {
+        emailInpValue = e.target.value;
+        if ( emailInpValue.length < 5 || passInpValue.length < 8 )
+        {
+          console.log( emailInpValue )
+          console.log( passInpValue )
+          submitBtn.disabled = true;
+          submitBtn.style.backgroundColor = "red";
+        }
+        else
+        {
+          submitBtn.disabled = false;
+          submitBtn.style.backgroundColor = "green";
+        }
+      } )
+
+
+
+      passInp?.addEventListener( "keyup", ( e ) =>
+      {
+        passInpValue = e.target.value;
+
+        if ( emailInpValue.length < 5 || passInpValue.length < 8 )
+        {
+          console.log( emailInpValue )
+          console.log( passInpValue )
+
+          submitBtn.disabled = true;
+          submitBtn.style.backgroundColor = "red";
+        }
+        else
+        {
+          submitBtn.disabled = false;
+          submitBtn.style.backgroundColor = "green";
+        }
+      } )
+
+      // Toggle the login and signup elements
+      function toggleForms ()
+      {
+        if ( currentForm )
+        {
+
+          currentForm = !currentForm
+          nameLabel.innerHTML = "Create Username";
+          passLabel.innerHTML = "Create Password";
+          formSwticher.innerHTML = "Login"
+          submitBtn.value = "Sign Up";
+        } else
+        {
+          currentForm = !currentForm
+          nameLabel.innerHTML = "Username";
+          passLabel.innerHTML = "Password";
+          formSwticher.innerHTML = "Sign Up";
+          submitBtn.value = "Login";
+        }
+      }
+
+      // Connect the form to the backend on port 5000
+      function submitForm ( e )
+      {
+        e.preventDefault();
+
+        console.log( emailInpValue )
+        fetch( 'http://localhost:5000/login', {
+          method: 'POST',
+          body: { email: emailInpValue, password: passInpValue },
+        } )
+          .then( res => res.json() )
+          .then( data => console.log( data ) )
+          .catch( err => console.log( err ) );
+
+      }
+
+      // Add event listeners to the forms
+      // loginForm.addEventListener( 'submit', submitForm );
+      signupForm.addEventListener( 'submit', submitForm );
+      formSwticher.addEventListener( 'click', toggleForms );
+    </script>
+
+</body>
+
+</html>
