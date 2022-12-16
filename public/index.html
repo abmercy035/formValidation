@@ -23,7 +23,7 @@
     #container {
       position: fixed;
       width: 340px;
-      height: 300px;
+      height: 320px;
       top: 50%;
       left: 50%;
       margin-top: -140px;
@@ -99,12 +99,24 @@
     #lower {
       background: #ecf2f5;
       width: 100%;
-      height: 70px;
-      /* margin-top: 20px; */
+      height: 60px;
+      margin-top: 20px;
       box-shadow: inset 0 1px 1px #fff;
       /* border-top: 1px solid #ccc; */
       border-bottom-right-radius: 3px;
       border-bottom-left-radius: 3px;
+    }
+
+    input[type=checkbox] {
+      margin-left: 20px;
+      margin-top: 30px;
+    }
+
+    .check {
+      margin-left: 3px;
+      font-size: 11px;
+      color: #444;
+      text-shadow: 0 1px 0 #fff;
     }
 
     #form-swticher {
@@ -143,29 +155,16 @@
   <!-- Login Form -->
 
   <form id="signup-form">
-    <label for="username" id="name-label">Username:</label>
-    <input type="text" id="email-input" name="email">
+    <label for="username" id="name-label">Username *</label>
+    <input type="text" required id="email-input" name="email">
     </label>
-    <label for="password" id="pass-label">Password:</label>
-    <input type="password" id="password-input" name="password">
+    <label for="password" id="pass-label">Password *</label>
+    <input type="password" required id="password-input" name="password">
     <div id="lower">
       <input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
       <input type="submit" value="Login" id="submit-btn">
     </div>
-    <!--/ lower-->
   </form>
-
-  <!-- Signup Form
-  <form id="signup-form" class="none">
-    <label for="username">Username:</label>
-    <input type="text" name="email" id="email-input">
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password-input">
-    <div id="lower">
-      <input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
-      <input type="submit" id="submit-btn" value="Signup">
-    </div>
-  </form> -->
   <div>
     <button id="form-swticher"> Sign Up </button>
     <script>
@@ -209,7 +208,6 @@
         {
           console.log( emailInpValue )
           console.log( passInpValue )
-
           submitBtn.disabled = true;
           submitBtn.style.backgroundColor = "red";
         }
