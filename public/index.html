@@ -95,6 +95,10 @@
       cursor: pointer;
       background-color: red;
     }
+    input[type=submit]:disabled{
+      cursor: not-allowed;
+      background-color: rgb(109, 6, 6);
+    }
 
     #lower {
       background: #ecf2f5;
@@ -161,8 +165,9 @@
     <label for="password" id="pass-label">Password *</label>
     <input type="password" required id="password-input" name="password">
     <div id="lower">
-      <input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
-      <input type="submit" value="Login" id="submit-btn">
+      <input type="checkbox" id="checkbox">
+      <label class="check" for="checkbox">Keep me logged in</label>
+      <input type="submit" value="Login" id="submit-btn" disabled>
     </div>
   </form>
   <div>
@@ -189,7 +194,7 @@
           console.log( emailInpValue )
           console.log( passInpValue )
           submitBtn.disabled = true;
-          submitBtn.style.backgroundColor = "red";
+          submitBtn.style.backgroundColor = "rgb(109, 6, 6)";
         }
         else
         {
@@ -209,7 +214,7 @@
           console.log( emailInpValue )
           console.log( passInpValue )
           submitBtn.disabled = true;
-          submitBtn.style.backgroundColor = "red";
+          submitBtn.style.backgroundColor = "rgb(109, 6, 6)";
         }
         else
         {
@@ -225,15 +230,15 @@
         {
 
           currentForm = !currentForm
-          nameLabel.innerHTML = "Create Username";
-          passLabel.innerHTML = "Create Password";
+          nameLabel.innerHTML = "Create Username *";
+          passLabel.innerHTML = "Create Password *";
           formSwticher.innerHTML = "Login"
           submitBtn.value = "Sign Up";
         } else
         {
           currentForm = !currentForm
-          nameLabel.innerHTML = "Username";
-          passLabel.innerHTML = "Password";
+          nameLabel.innerHTML = "Username *";
+          passLabel.innerHTML = "Password *";
           formSwticher.innerHTML = "Sign Up";
           submitBtn.value = "Login";
         }
