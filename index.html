@@ -78,7 +78,7 @@
       justify-content: center;
     }
 
-    #form-container >  form {
+    #form-container>form {
       width: 100%;
       height: 70%;
       display: flex;
@@ -130,7 +130,7 @@
       box-shadow: 1px 1px 4px rgb(144, 143, 143);
     }
 
-    .error {
+    #form div input.error {
       color: #777;
       border: 1px solid #ff0000;
     }
@@ -236,7 +236,7 @@
         </div>
       </div>
       <div id="form-bottom">
-        <input type="submit" value="Create Account" id="form-btn"> 
+        <input type="submit" value="Create Account" id="form-btn">
         <span>Already have ab account? <a> Log in</a></span>
       </div>
     </form>
@@ -248,15 +248,11 @@
     const comfirmPass = document.getElementById( 'comfirm-password' );
     const form = document.getElementById( 'form' );
     const errorsg = document.getElementById( 'error-msg' );
-    var emailValue = "";
-    var passInpValue = "";
-    var currentForm = true;
 
     const checkPass = () =>
     {
       if ( pass.value.length < 8 || pass.value.length === 0 )
       {
-        errorsg.style.color = "blue"
         errorsg.innerHTML = "Password must be at lest 8 characters"
         return false
       }
@@ -270,7 +266,6 @@
       }
       else
       {
-        // errorsg.style.color = "blue"
         errorsg.innerHTML = "Password do not match"
         return false
       }
@@ -288,7 +283,6 @@
       }
     }
 
-
     const submit = () =>
     {
       if ( !checkEmail() )
@@ -298,6 +292,7 @@
       else if ( !checkPass() )
       {
         pass.style.borderColor = "red"
+        comfirmPass.style.borderColor = "red"
       }
       else ( checkPass() && checkEmail() )
       {
@@ -306,7 +301,7 @@
     }
     pass.addEventListener( 'keyup', checkPass );
     comfirmPass.addEventListener( 'keyup', checkPass );
-    // Add event listeners to the forms
+    // ! Add event listeners to the forms
     form.addEventListener( 'submit', submit );
   </script>
 
