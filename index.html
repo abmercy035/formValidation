@@ -5,146 +5,183 @@
   <title>Login/Signup</title>
 
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f2f2f2;
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      outline: none;
     }
 
     html,
     body {
+      font-family: sans-serif;
+      background-color: #f2f2f2;
       width: 100%;
       height: 100%;
       font-family: "Helvetica Neue", Helvetica, sans-serif;
       color: #444;
       -webkit-font-smoothing: antialiased;
-      background: #f0f0f0;
+      background: #f0f0f0e7;
     }
 
     #container {
-      position: fixed;
-      width: 340px;
-      height: 320px;
-      top: 50%;
-      left: 50%;
-      margin-top: -140px;
-      margin-left: -170px;
-      background: #fff;
-      border-radius: 3px;
-      border: 1px solid #ccc;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
-    }
-
-    form {
-      margin: 0 auto;
-      margin-top: 20px;
-    }
-
-    label {
-      color: #555;
-      display: inline-block;
-      margin-left: 18px;
-      padding-top: 10px;
-      font-size: 14px;
-      color: hsla(0, 100%, 50%, 10);
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    input {
-      font-family: "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 12px;
-      outline: none;
-    }
-
-    input[type=text],
-    input[type=password],
-    input[type=time] {
-      color: #777;
-      padding-left: 10px;
-      /* margin: 10px; */
-      margin-top: 12px;
-      margin-left: 18px;
-      width: 290px;
-      height: 30px;
-      border: 1px solid #c7d0d2;
-      border-radius: 2px;
-    }
-
-    input[type=text]:hover,
-    input[type=password]:hover,
-    input[type=time]:hover {
-      border: 1px solid #b6bfc0;
-    }
-
-    input[type=submit] {
-      float: right;
-      margin-right: 20px;
-      margin-top: 20px;
-      width: 100px;
-      height: 30px;
-      font-size: 14px;
-      font-weight: bold;
-      color: #fff;
-      /*IE fallback*/
-      border-radius: 30px;
-      border: 0;
-      cursor: pointer;
-      background-color: red;
-    }
-    input[type=submit]:disabled{
-      cursor: not-allowed;
-      background-color: rgb(109, 6, 6);
-    }
-
-    #lower {
-      background: #ecf2f5;
       width: 100%;
-      height: 60px;
-      margin-top: 20px;
-      box-shadow: inset 0 1px 1px #fff;
-      /* border-top: 1px solid #ccc; */
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
-    }
-
-    input[type=checkbox] {
-      margin-left: 20px;
-      margin-top: 30px;
-    }
-
-    .check {
-      margin-left: 3px;
-      font-size: 11px;
-      color: #444;
-      text-shadow: 0 1px 0 #fff;
-    }
-
-    #form-swticher {
-      position: fixed;
-      width: 340px;
-      bottom: 10px;
-      left: 50%;
-      margin-left: -170px;
-      background: #fff;
+      height: 100%;
+      display: flex;
       border-radius: 3px;
-      border: 1px solid #ccc;
       box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
-      margin-right: 20px;
-      margin-top: 20px;
-      height: 30px;
+    }
+
+    #form-msg {
+      padding: 0 30px;
+    }
+
+    #logo-container {
+      width: 50%;
+      height: 100%;
+      background-image: url("halie-west-25xggax4bSA-unsplash.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    #logo {
+      width: 100%;
+      height: 100px;
+      background-color: rgba(0, 0, 0, 0.519);
+      position: absolute;
+      top: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #logo span {
+      color: #fff;
+      font-size: 55px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-weight: 900;
+      object-fit: contain;
+    }
+
+    #logo img {
+      width: 80px;
+      height: 80px;
+    }
+
+    #form-container {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #form-container >  form {
+      width: 100%;
+      height: 70%;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #form {
+      background-color: #fff;
+      height: 200px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 30px;
+      padding: 20px 0px 20px 30px;
+      align-items: flex-end;
+      box-shadow: 0px 2px 4px rgba(183, 181, 181, 0.801);
+    }
+
+    #form div {
+      width: 40%;
+      height: 55px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    #form div label {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      font-size: 11px;
+    }
+
+    #form div input {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
+      min-height: 25px;
+      padding-left: 7px;
+      border: 1px rgba(119, 119, 119, 0.309) solid;
+    }
+
+    #form div input:focus {
+      border: 1px rgba(56, 56, 238, 0.875) solid;
+      box-shadow: 1px 1px 4px rgb(144, 143, 143);
+    }
+
+    .error {
+      color: #777;
+      border: 1px solid #ff0000;
+    }
+
+    #error-msg {
+      font-size: 11px;
+      color: #ff0000;
+      font-weight: 500;
+      /* position: absolute; */
+    }
+
+    #form-bottom {
+      display: flex;
+      flex-direction: column;
+      border-radius: 3px;
       font-size: 14px;
       font-weight: bold;
-      color: #fff;
+      color: rgb(0, 0, 0);
       /*IE fallback*/
-      border-radius: 30px;
-      border: 1px solid #121314;
-      cursor: pointer;
-      background-color:rgb(68, 68, 68);
+      padding-left: 30px;
+      gap: 40px;
+    }
 
+    #form-btn {
+      width: 55%;
+      max-width: 200px;
+      height: 42px;
+      box-shadow: -0px 2px 3px #121314;
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+      border-radius: 10px;
+      border: 0;
+      background-color: #406637f3;
+      font-weight: 600;
+    }
+
+    #form-bottom span {
+      font-size: 14px;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+      /*IE fallback*/
+      text-shadow: -0px 1px 3px #17181aa8;
+    }
+
+    #form-bottom span a {
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #35552e;
+      /*IE fallback*/
+      text-shadow: -0px 2px 2px #121314;
     }
 
     .none {
@@ -155,116 +192,123 @@
 </head>
 
 <body id="container">
-  <h1>Login / Sign Up</h1>
 
+  <div id="logo-container">
+    <div id="logo">
+      <img src="./odin-lined.png" alt="">
+      <span>
+        ODIN</span>
+    </div>
+  </div>
   <!-- Login Form -->
 
-  <form id="signup-form">
-    <label for="username" id="name-label">Username *</label>
-    <input type="text" required id="email-input" name="email">
-    </label>
-    <label for="password" id="pass-label">Password *</label>
-    <input type="password" required id="password-input" name="password">
-    <div id="lower">
-      <input type="checkbox" id="checkbox">
-      <label class="check" for="checkbox">Keep me logged in</label>
-      <input type="submit" value="Login" id="submit-btn" disabled>
-    </div>
-  </form>
-  <div>
-    <button id="form-swticher"> Sign Up </button>
-    <script>
-      // Get the login and signup elements
-      // const loginForm = document.querySelector( '#login-form' );
-      const signupForm = document.querySelector( '#signup-form' );
-      const emailInp = document.querySelector( '#email-input' );
-      const passLabel = document.querySelector( '#pass-label' );
-      const nameLabel = document.querySelector( '#name-label' );
-      const passInp = document.querySelector( '#password-input' );
-      const submitBtn = document.querySelector( '#submit-btn' );
-      const formSwticher = document.querySelector( '#form-swticher' );
-      var emailInpValue = "";
-      var passInpValue = "";
-      var currentForm = true;
+  <div id="form-container">
+    <form>
+      <div id="form-msg"> This is not a real OOnline service Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Quia possimus
+        error recusandae ipsum, dignissimos optio perspiciatis amet quaerat aliquam magnam voluptate excepturi sapiente?
+      </div>
+      <div id="form">
+        <div class="form-group">
+          <label for="fisrt-name" id="fisrt-name-label">FIRST NAME</label>
+          <input type="text" required id="fisrt-name" name="fisrt-name">
+        </div>
+        <div class="form-group">
+          <label for="last-name" id="last-name-label">LAST NAME</label>
+          <input type="text" required id="last-name" name="last-name">
+        </div>
+        <div class="form-group">
+          <label for="email" id="email-label">EMAIL</label>
+          <input type="text" required id="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="mobile" id="mobile-label">PHONE NUMBER</label>
+          <input type="text" required id="mobile" name="mobile">
+        </div>
+        <div class="form-group">
+          <label for="password" id="password-label">PASSWORD</label>
+          <input type="password" required id="password" class="error" name="password">
+          <span id="error-msg">* Password do not match</span>
+        </div>
+        <div class="form-group">
+          <label for="comfirm-password" id="name-label">CONFIRM PASSWORD</label>
+          <input type="password" required id="comfirm-password" class="error" name="comfirm-password">
+        </div>
+      </div>
+      <div id="form-bottom">
+        <input type="submit" value="Create Account" id="form-btn"> 
+        <span>Already have ab account? <a> Log in</a></span>
+      </div>
+    </form>
+  </div>
+  <script>
+    // selecting the form elements
+    const email = document.getElementById( 'email' );
+    const pass = document.getElementById( 'password' );
+    const comfirmPass = document.getElementById( 'comfirm-password' );
+    const form = document.getElementById( 'form' );
+    const errorsg = document.getElementById( 'error-msg' );
+    var emailValue = "";
+    var passInpValue = "";
+    var currentForm = true;
 
-      emailInp?.addEventListener( "keyup", ( e ) =>
+    const checkPass = () =>
+    {
+      if ( pass.value.length < 8 || pass.value.length === 0 )
       {
-        emailInpValue = e.target.value;
-        if ( emailInpValue.length < 5 || passInpValue.length < 8 )
-        {
-          console.log( emailInpValue )
-          console.log( passInpValue )
-          submitBtn.disabled = true;
-          submitBtn.style.backgroundColor = "rgb(109, 6, 6)";
-        }
-        else
-        {
-          submitBtn.disabled = false;
-          submitBtn.style.backgroundColor = "green";
-        }
-      } )
-
-
-
-      passInp?.addEventListener( "keyup", ( e ) =>
-      {
-        passInpValue = e.target.value;
-
-        if ( emailInpValue.length < 5 || passInpValue.length < 8 )
-        {
-          console.log( emailInpValue )
-          console.log( passInpValue )
-          submitBtn.disabled = true;
-          submitBtn.style.backgroundColor = "rgb(109, 6, 6)";
-        }
-        else
-        {
-          submitBtn.disabled = false;
-          submitBtn.style.backgroundColor = "green";
-        }
-      } )
-
-      // Toggle the login and signup elements
-      function toggleForms ()
-      {
-        if ( currentForm )
-        {
-          currentForm = !currentForm
-          nameLabel.innerHTML = "Create Username *";
-          passLabel.innerHTML = "Create Password *";
-          formSwticher.innerHTML = "Login"
-          submitBtn.value = "Sign Up";
-        } else
-        {
-          currentForm = !currentForm
-          nameLabel.innerHTML = "Username *";
-          passLabel.innerHTML = "Password *";
-          formSwticher.innerHTML = "Sign Up";
-          submitBtn.value = "Login";
-        }
+        errorsg.style.color = "blue"
+        errorsg.innerHTML = "Password must be at lest 8 characters"
+        return false
       }
-
-      // Connect the form to the backend on port 5000
-      function submitForm ( e )
+      else if ( pass.value === comfirmPass.value )
       {
-        e.preventDefault();
-
-        console.log( emailInpValue )
-        fetch( 'http://localhost:5000/login', {
-          method: 'POST',
-          body: { email: emailInpValue, password: passInpValue },
-        } )
-          .then( res => res.json() )
-          .then( data => console.log( data ) )
-          .catch( err => console.log( err ) );
-
+        errorsg.style.color = "blue"
+        errorsg.innerHTML = "Password match"
+        pass.style.borderColor = "blue"
+        comfirmPass.style.borderColor = "blue"
+        return true
       }
+      else
+      {
+        // errorsg.style.color = "blue"
+        errorsg.innerHTML = "Password do not match"
+        return false
+      }
+    }
 
-      // Add event listeners to the forms
-      // loginForm.addEventListener( 'submit', submitForm );
-      signupForm.addEventListener( 'submit', submitForm );
-      formSwticher.addEventListener( 'click', toggleForms );
-    </script>
+    const checkEmail = () =>
+    {
+      if ( email.value.length < 5 || email.value.length === 0 )
+      {
+        return false
+      }
+      else
+      {
+        return true
+      }
+    }
+
+
+    const submit = () =>
+    {
+      if ( !checkEmail() )
+      {
+        email.style.borderColor = "red"
+      }
+      else if ( !checkPass() )
+      {
+        pass.style.borderColor = "red"
+      }
+      else ( checkPass() && checkEmail() )
+      {
+        return true;
+      }
+    }
+    pass.addEventListener( 'keyup', checkPass );
+    comfirmPass.addEventListener( 'keyup', checkPass );
+    // Add event listeners to the forms
+    form.addEventListener( 'submit', submit );
+  </script>
 
 </body>
 
